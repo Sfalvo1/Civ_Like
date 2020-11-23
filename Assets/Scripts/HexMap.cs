@@ -13,6 +13,10 @@ public class HexMap : MonoBehaviour
     public Mesh meshHill;
     public Mesh meshMountain;
 
+    [Header("Tree Prefabs")]
+    public GameObject forestPrefab;
+    public GameObject junglePrefab;
+
     [Header("Materials")]
     public Material matOcean;
     public Material matPlains;
@@ -133,18 +137,31 @@ public class HexMap : MonoBehaviour
 
                 // Moisture
 
-                if (h.elevation >= heightFlat)
+                if (h.elevation >= heightFlat && h.elevation < heightMountain)
                 {
                     if (h.moisture >= moistureJungle)
                     {
                         mr.material = matGrasslands;
                         // TODO spawn jungle
+                        Vector3 p = hexGO.transform.position;
+                        if (h.elevation >= heightHill)
+                        {
+                            p.y += 0.25f;
+                        }
+                        Instantiate(junglePrefab, p, Quaternion.identity, hexGO.transform);
                     }
                     else if (h.moisture >= moistureForest)
                     {
                         mr.material = matGrasslands;
                         // TODO spawn forests
+                        Vector3 p = hexGO.transform.position;
+                        if (h.elevation >= heightHill)
+                        {
+                            p.y += 0.25f;
+                        }
+                        Instantiate(forestPrefab, p, Quaternion.identity, hexGO.transform);
                     }
+
                     else if (h.moisture >= moistureGrasslands)
                     {
                         mr.material = matGrasslands;

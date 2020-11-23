@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 7cdc687b386c075428bd8f85fc96af3e, type: 2}
   m_LightingSettings: {fileID: 4890085278179872738, guid: fd6856c085cee504a97f7437d741daf7, type: 2}
 --- !u!196 &4
 NavMeshSettings:
@@ -154,17 +154,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HexPrefab: {fileID: 6695512814956206922, guid: ce4aca279f8c0774989a15ab8bd3acfc, type: 3}
-  MeshWater: {fileID: 0}
-  MeshFlat: {fileID: 0}
-  MeshHill: {fileID: 0}
-  MeshMountain: {fileID: 0}
-  MatOcean: {fileID: 0}
-  MatPlains: {fileID: 0}
-  MatGrasslands: {fileID: 0}
-  MatMountains: {fileID: 0}
+  meshWater: {fileID: 0}
+  meshFlat: {fileID: 0}
+  meshHill: {fileID: 0}
+  meshMountain: {fileID: 0}
+  forestPrefab: {fileID: 0}
+  junglePrefab: {fileID: 0}
+  matOcean: {fileID: 0}
+  matPlains: {fileID: 0}
+  matGrasslands: {fileID: 0}
+  matMountains: {fileID: 0}
+  matDesert: {fileID: 0}
   heightMountain: 0.85
   heightHill: 0.6
   heightFlat: 0
+  moistureJungle: 1
+  moistureForest: 0.8
+  moistureGrasslands: 0.33
+  moisturePlains: 0
   numRows: 80
   numColumns: 106
 --- !u!4 &194226170
@@ -194,17 +201,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HexPrefab: {fileID: 6695512814956206922, guid: ce4aca279f8c0774989a15ab8bd3acfc, type: 3}
-  MeshWater: {fileID: 2534964839176971238, guid: 82e5c806c460a08498cf77f448ca9e9a, type: 3}
-  MeshFlat: {fileID: 2534964839176971238, guid: 82e5c806c460a08498cf77f448ca9e9a, type: 3}
-  MeshHill: {fileID: 2534964839176971238, guid: 82e5c806c460a08498cf77f448ca9e9a, type: 3}
-  MeshMountain: {fileID: 2534964839176971238, guid: 82e5c806c460a08498cf77f448ca9e9a, type: 3}
-  MatOcean: {fileID: 2100000, guid: 953f542cbe9d8af41aba61946f01fa73, type: 2}
-  MatPlains: {fileID: 2100000, guid: d34c30c45a108bb4ab874e84f941dbab, type: 2}
-  MatGrasslands: {fileID: 2100000, guid: f2bf9f6a30e44c3408d4542f8135e0ad, type: 2}
-  MatMountains: {fileID: 2100000, guid: e6468b5ac293e3b429c7fd91fbd1ff9f, type: 2}
+  meshWater: {fileID: 2534964839176971238, guid: 82e5c806c460a08498cf77f448ca9e9a, type: 3}
+  meshFlat: {fileID: 2534964839176971238, guid: 82e5c806c460a08498cf77f448ca9e9a, type: 3}
+  meshHill: {fileID: 2534964839176971238, guid: a82381dd40c2bbe4786096328877811b, type: 3}
+  meshMountain: {fileID: 2534964839176971238, guid: eb896b9a8c2a8c34c8613d8bfb0e2f6e, type: 3}
+  forestPrefab: {fileID: 7352526364901441628, guid: 97379b0a51324c44baa429abe0380a68, type: 3}
+  junglePrefab: {fileID: 0}
+  matOcean: {fileID: 2100000, guid: 953f542cbe9d8af41aba61946f01fa73, type: 2}
+  matPlains: {fileID: 2100000, guid: d34c30c45a108bb4ab874e84f941dbab, type: 2}
+  matGrasslands: {fileID: 2100000, guid: f2bf9f6a30e44c3408d4542f8135e0ad, type: 2}
+  matMountains: {fileID: 2100000, guid: e6468b5ac293e3b429c7fd91fbd1ff9f, type: 2}
+  matDesert: {fileID: 2100000, guid: a567c630bc4455845aa69cbf05fb9e6b, type: 2}
   heightMountain: 0.85
   heightHill: 0.6
   heightFlat: 0
+  moistureJungle: 1
+  moistureForest: 0.5
+  moistureGrasslands: 0
+  moisturePlains: -0.5
   numRows: 30
   numColumns: 60
 --- !u!1 &705507993
